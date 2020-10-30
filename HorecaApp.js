@@ -22,17 +22,27 @@ function Bestelling(){
        var vraag2 = prompt("Hoeveel bitterballen wilt u toevoegen (8 of 16)?");
        if(vraag2 == "8"){
            bitterbalacht = prompt("Hoeveel schalen van 8 bitterballen wilt u?");
-           alert(bitterbalacht + " schaal(en) toegevoegd aan bestelling.");
+           if(bitterbalacht == "", "0"){
+               alert("Geen bitterballen toegevoegd aan bestelling.");
+           }else{
+            alert(bitterbalacht + " schaal(en) toegevoegd aan bestelling.");
+           }
+       }else{
+           alert("Je kan hier alleen 8 of 16 invullen. Probeer opnieuw. We brengen u terug naar het begin.");
        }
        if(vraag2 == "16"){
            bitterbalzestien = prompt("Hoeveel schalen van 16 bitterballen wilt u?");
-           alert(bitterbalzestien + " Schaal(en) toegevoegd aan bestelling.");
+           if(bitterbalzestien == "", "0"){
+               alert("Geen bitterballen toegevoegd aan bestelling.");
+           }else{
+            alert(bitterbalzestien + " Schaal(en) toegevoegd aan bestelling.");
+           }
        }
     }
 
    if(vraag == "fris"){
        fris = prompt("Hoeveel fris wilt u?");
-        if(fris == ""){
+        if(fris == "", "0"){
             alert("Geen fris toegevoegd.");
             fris = 0;
         }else{
@@ -42,7 +52,7 @@ function Bestelling(){
 
    if(vraag == "bier"){
         bier = prompt("Hoeveel bier wilt u?");
-        if(bier == ""){
+        if(bier == "", "0"){
             alert("Geen bier toegevoegt");
             bier = 0;
         }else{
@@ -52,7 +62,7 @@ function Bestelling(){
    
    if(vraag == "wijn"){
         wijn = prompt("Hoeveel wijn wilt u?");
-        if(wijn == ""){
+        if(wijn == "", "0"){
             alert("Geen wijn toegevoegd.")
             wijn = 0;
         }else{
@@ -69,6 +79,7 @@ while(loop){
     Bestelling();
 }
 
+//kassabon
 var frisprijs = prijsf * fris;
 var bierprijs = prijsb * bier;
 var wijnprijs = prijsw * wijn;
